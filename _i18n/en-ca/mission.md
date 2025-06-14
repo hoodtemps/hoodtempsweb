@@ -1,0 +1,1 @@
+At Hoodtemps, our mission is to increase the amount of time that our community spends together, specificially in a **self-organizing** fashion. We are an **apolitical**, **secular** group aiming to foster stronger social-cohesion and connectedness through the most basic of community building effort: unstructured time spent together, with neighbours and friends.

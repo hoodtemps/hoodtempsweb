@@ -13,19 +13,20 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-lang: en-US
-title: My Awesome Site
-email:
+# TODO - scope: with lang
+languages: ["en-ca", "fr", "en-us"]
+title: Hoodtemps
+email: hoodtemps@proton.me
 description:
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 author:
   name:
-  twitter:
+  bluesky:
   picture:
-twitter_username:
-github_username:
-logo: # path of site logo, e.g. "/assets/images/logo.png"
+# twitter_username: hoodtemps
+github_username: hoodtemps
+# logo: "/assets/images/logo.png"
 search: # true, false (default)
 search_full_content: false # true, false (default)
 search_provider: # lunr (default), algolia
@@ -37,12 +38,14 @@ algolia:
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-basically-basic
+remote_theme: "mmistakes/jekyll-theme-basically-basic@1.4.5" 
 plugins: # previsously gems
-  - jekyll-feed
+  # - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-multiple-languages-plugin
+  - jekyll-events
 feed:
   path: atom.xml
 
@@ -83,3 +86,5 @@ defaults:
     values:
       layout: post
       read_time: true
+
+default_locale_in_subfolder: true
