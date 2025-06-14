@@ -17,6 +17,7 @@
 languages: ["en-ca", "fr", "en-us"]
 title: Hoodtemps
 email: hoodtemps@proton.me
+repository: hoodtemps/hoodtempsweb
 description:
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
