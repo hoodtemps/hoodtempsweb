@@ -27,7 +27,7 @@ When you are a hoodie, who are you?
 If Hoodtemps accomplishes nothing else, having fun with our neighbours on a regular basis seems worth the effort. More importantly, having fun with your neighbours is something you will keep doing!
 
 <p align="center">
-<img src="assets/images/en-ca/symbol-no-background.png" class="hoodtempssymbol"/>
+<img src="{{ site.baseurl }}/assets/images/en-ca/symbol-no-background.png" class="hoodtempssymbol"/>
 </p>
 
 # Sounds good? Let's Go!

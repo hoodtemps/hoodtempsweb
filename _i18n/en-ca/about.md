@@ -8,7 +8,7 @@ I am an American who moved with his family to Montreal in 2021. When we arrived 
 Where there were strangers, now there are emergency contacts, camping trips, brunches, birthday parties. All of our lives are better individually because of what we formed together.
 
 <p align="center">
-<img src="assets/images/en-ca/symbol-no-background.png" class="hoodtempssymbol"/>
+<img src="{{ site.baseurl }}/assets/images/en-ca/symbol-no-background.png" class="hoodtempssymbol"/>
 </p>
 
 ### The other half of the story

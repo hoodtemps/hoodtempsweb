@@ -34,40 +34,40 @@
         {% include navigation.html %}
         <ul class="contact-list">
           <li>
-            <a href="/index.html">{{site.translations[site.lang].home}}</a>
+            <a href="{{ site.baseurl }}/index.html">{{site.translations[site.lang].home}}</a>
           </li>
           <li>
-            <a href="/about.html">{{site.translations[site.lang].about}}</a>
+            <a href="{{ site.baseurl }}/about.html">{{site.translations[site.lang].about}}</a>
           </li>
           <li>
-            <a href="/expect.html">{{site.translations[site.lang].expect}}</a>
+            <a href="{{ site.baseurl }}/expect.html">{{site.translations[site.lang].expect}}</a>
           </li>
           <li>
-            <a href="/details.html">{{site.translations[site.lang].details}}</a>
+            <a href="{{ site.baseurl }}/details.html">{{site.translations[site.lang].details}}</a>
           </li>
           <li>
-            <a href="/mission.html">{{site.translations[site.lang].mission}}</a>
+            <a href="{{ site.baseurl }}/mission.html">{{site.translations[site.lang].mission}}</a>
           </li>
           <li>
-            <a href="/vision.html">{{site.translations[site.lang].vision}}</a>
+            <a href="{{ site.baseurl }}/vision.html">{{site.translations[site.lang].vision}}</a>
           </li>
           <li>
-            <a href="/events.html">{{site.translations[site.lang].events}}</a>
+            <a href="{{ site.baseurl }}/events.html">{{site.translations[site.lang].events}}</a>
           </li>
           <li>
-            <a href="/ideas.html">{{site.translations[site.lang].ideas}}</a>
+            <a href="{{ site.baseurl }}/ideas.html">{{site.translations[site.lang].ideas}}</a>
           </li>
           <!-- <li>
-            <a href="/faq.html">{{site.translations[site.lang].faq}}</a>
+            <a href="{{ site.baseurl }}/faq.html">{{site.translations[site.lang].faq}}</a>
           </li> -->
         </ul>
         
         <!-- <ul id="language-selector" class="contact-list">
           <li>
-            <a href="/fr">FR</a>
+            <a href="{{ site.baseurl }}/fr">FR</a>
           </li>
           <li>
-            <a href="/en-ca">EN</a>
+            <a href="{{ site.baseurl }}/en-ca">EN</a>
           </li>
         </ul> -->
 
@@ -79,7 +79,7 @@
       <div class="wrapper">
         {% include masthead.html %}
         <div class="banner">
-          <img src="assets/images/{{site.lang}}/logo-no-background.png" class="hoodtempslogo"/>
+          <img src="{{ site.baseurl }}/assets/images/{{site.lang}}/logo-no-background.png" class="hoodtempslogo"/>
 
         </div>
 
