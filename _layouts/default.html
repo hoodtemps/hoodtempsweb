@@ -5,11 +5,10 @@
     Free for personal and commercial use under the MIT license
     https://github.com/mmistakes/jekyll-theme-basically-basic/blob/master/LICENSE
 -->
-<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no-js">
+<html lang="{{ page.lang | default: site.lang | default: 'en-ca' }}" class="no-js">
   {% include head.html %}
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {{ page.title | slugify }}">
-
     {% include skip-links.html %}
 
     <div class="sidebar-toggle-wrapper">
@@ -33,6 +32,45 @@
     <div id="sidebar" class="sidebar">
       <div class="inner">
         {% include navigation.html %}
+        <ul class="contact-list">
+          <li>
+            <a href="/index.html">{{site.translations[site.lang].home}}</a>
+          </li>
+          <li>
+            <a href="/about.html">{{site.translations[site.lang].about}}</a>
+          </li>
+          <li>
+            <a href="/expect.html">{{site.translations[site.lang].expect}}</a>
+          </li>
+          <li>
+            <a href="/details.html">{{site.translations[site.lang].details}}</a>
+          </li>
+          <li>
+            <a href="/mission.html">{{site.translations[site.lang].mission}}</a>
+          </li>
+          <li>
+            <a href="/vision.html">{{site.translations[site.lang].vision}}</a>
+          </li>
+          <li>
+            <a href="/events.html">{{site.translations[site.lang].events}}</a>
+          </li>
+          <li>
+            <a href="/ideas.html">{{site.translations[site.lang].ideas}}</a>
+          </li>
+          <!-- <li>
+            <a href="/faq.html">{{site.translations[site.lang].faq}}</a>
+          </li> -->
+        </ul>
+        
+        <!-- <ul id="language-selector" class="contact-list">
+          <li>
+            <a href="/fr">FR</a>
+          </li>
+          <li>
+            <a href="/en-ca">EN</a>
+          </li>
+        </ul> -->
+
         {% include contact-list.html %}
       </div>
     </div>
@@ -40,9 +78,15 @@
     <div class="canvas">
       <div class="wrapper">
         {% include masthead.html %}
+        <div class="banner">
+          <img src="assets/images/{{site.lang}}/logo-no-background.png" class="hoodtempslogo"/>
+
+        </div>
+
         <div class="initial-content">
           {{ content }}
         </div>
+
 
         <div class="search-content">
           {% include search-form.html %}

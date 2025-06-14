@@ -6,12 +6,10 @@
     </div>
   {% endif %}
 
-  <div class="inner">
+  <div class="intro-inner">
     <div class="intro-text">
-      <h1 id="page-title" class="intro-title">{{ page.alt_title | default: page.title | default: site.title | markdownify | strip_html }}</h1>
-      {% if page.sub_title %}
-        <p class="intro-subtitle">{{ page.sub_title | markdownify | strip_html }}</p>
-      {% endif %}
+      <h1 id="page-title" class="intro-title">{{   site.translations[site.lang][page.title] | markdownify | strip_html }}</h1>
+      <h5>DRAFT: Hoodtemps website is a work in progress. Version française en cours !</h5>
 
       {% if page.date %}
         {% include author %}
