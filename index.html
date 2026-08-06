@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoodtemps — Quand on est nous autres</title>
+<meta name="description" content="Hoodtemps : un moment fixe chaque semaine où ta rue sort dehors pour être ensemble. / A standing weekly time when your street comes outside to just be together.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='52' fill='none' stroke='%232f7d4f' stroke-width='8'/%3E%3Cpath d='M105 60h-8M15 60h8' stroke='%232f7d4f' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M36 97c4-17 13-24 24-22 11-2 20 5 24 22z' fill='%232f7d4f'/%3E%3Cpath d='M60 80V38' stroke='%232f7d4f' stroke-width='6.5' stroke-linecap='round'/%3E%3Cpath d='M60 43c-10 1-19-5-21-17 12-1 20 7 21 17z' fill='%232f7d4f'/%3E%3Cpath d='M60 43c10 1 19-5 21-17-12-1-20 7-21 17z' fill='%232f7d4f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ee;
+  --card:#ffffff;
+  --ink:#2d2a24;
+  --muted:#6e675c;
+  --green:#2f7d4f;
+  --green-dark:#22603b;
+  --terra:#c95b3f;
+  --line:#e8e0d2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0 0 .5em}
+h2{font-size:1.9rem;letter-spacing:-.01em}
+h3{font-size:1.1rem}
+a{color:var(--green);text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{color:var(--green-dark)}
+p{margin:.4em 0 1em}
+
+/* language switching */
+html[lang="fr"] .en{display:none !important}
+html[lang="en"] .fr{display:none !important}
+
+.wrap{max-width:700px;margin:0 auto;padding:0 22px}
+
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:700px;margin:0 auto;padding:18px 22px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.04em;color:var(--ink);text-decoration:none}
+.brand svg{width:28px;height:28px}
+.langs{display:flex;gap:4px;background:#efe9dd;border-radius:99px;padding:4px}
+.langs button{
+  border:0;background:transparent;border-radius:99px;padding:5px 14px;
+  font:600 .85rem/1 system-ui,sans-serif;color:var(--muted);cursor:pointer;
+}
+.langs button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+/* hero */
+.hero{text-align:center;padding:52px 0 30px}
+.hero svg{width:108px;height:108px;margin-bottom:22px}
+.hero h1{
+  font-size:clamp(2.6rem,9vw,3.8rem);font-weight:800;letter-spacing:.06em;margin:0;
+}
+.tagline{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:600;
+  color:var(--terra);font-size:1.25rem;margin:.35em 0 1em;
+}
+.lede{font-size:1.15rem;max-width:520px;margin:0 auto 1.8em;color:var(--muted)}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-block;border-radius:99px;padding:12px 26px;text-decoration:none;
+  font:600 1rem/1 "Bricolage Grotesque",sans-serif;
+}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-dark);color:#fff}
+.btn-ghost{border:2px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg)}
+
+section{padding:44px 0}
+section + section{border-top:1px solid var(--line)}
+.kicker{
+  font:700 .8rem/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--terra);margin-bottom:10px;
+}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:18px 18px 8px;
+}
+.card h3{margin-bottom:.35em}
+.card p{color:var(--muted);font-size:.95rem}
+
+/* steps */
+ol.steps{list-style:none;counter-reset:s;margin:24px 0 0;padding:0}
+ol.steps li{
+  counter-increment:s;position:relative;padding:0 0 26px 62px;
+}
+ol.steps li::before{
+  content:counter(s);position:absolute;left:0;top:-2px;
+  width:42px;height:42px;border-radius:50%;
+  background:var(--green);color:#fff;
+  font:800 1.2rem/42px "Bricolage Grotesque",sans-serif;text-align:center;
+}
+ol.steps li:not(:last-child)::after{
+  content:"";position:absolute;left:20px;top:44px;bottom:4px;width:2px;background:var(--line);
+}
+ol.steps h3{margin-bottom:.2em}
+ol.steps p{margin:0;color:var(--muted)}
+
+/* expect list */
+ul.plain{list-style:none;margin:20px 0 0;padding:0}
+ul.plain li{position:relative;padding:0 0 14px 32px}
+ul.plain li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--green);font-weight:700}
+
+/* ideas */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.chip{
+  background:var(--card);border:1px solid var(--line);border-radius:99px;
+  padding:8px 16px;font-size:.92rem;
+}
+.avoid{margin-top:22px;font-size:.95rem;color:var(--muted)}
+.avoid strong{color:var(--terra)}
+
+/* story */
+.story{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 28px 18px;margin-top:10px}
+.story .sig{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;color:var(--muted)}
+
+footer{
+  border-top:1px solid var(--line);padding:34px 0 46px;text-align:center;
+  color:var(--muted);font-size:.92rem;
+}
+footer .motto{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;color:var(--ink);font-size:1.05rem;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="52" fill="none" stroke="var(--green)" stroke-width="8"/>
+      <path d="M105 60h-8M15 60h8" stroke="var(--green)" stroke-width="6" stroke-linecap="round"/>
+      <path d="M36 97c4-17 13-24 24-22 11-2 20 5 24 22z" fill="var(--green)"/>
+      <path d="M60 80V38" stroke="var(--green)" stroke-width="6.5" stroke-linecap="round"/>
+      <path d="M60 43c-10 1-19-5-21-17 12-1 20 7 21 17z" fill="var(--green)"/>
+      <path d="M60 43c10 1 19-5 21-17-12-1-20 7-21 17z" fill="var(--green)"/>
+    </svg>
+    HOODTEMPS
+  </a>
+  <nav class="langs" aria-label="Language">
+    <button id="btn-fr" aria-pressed="true" onclick="setLang('fr')">FR</button>
+    <button id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+  </nav>
+</header>
+
+<div class="hero wrap">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <circle cx="60" cy="60" r="52" fill="none" stroke="var(--ink)" stroke-width="8"/>
+    <path d="M105 60h-8M15 60h8" stroke="var(--ink)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M36 97c4-17 13-24 24-22 11-2 20 5 24 22z" fill="var(--green)"/>
+    <path d="M60 80V38" stroke="var(--green)" stroke-width="6.5" stroke-linecap="round"/>
+    <path d="M60 43c-10 1-19-5-21-17 12-1 20 7 21 17z" fill="var(--green)"/>
+    <path d="M60 43c10 1 19-5 21-17-12-1-20 7-21 17z" fill="var(--green)"/>
+  </svg>
+  <h1>HOODTEMPS</h1>
+  <p class="tagline">
+    <span class="fr">Quand on est nous autres.</span>
+    <span class="en">When we are us.</span>
+  </p>
+  <p class="lede fr">Un moment fixe, chaque semaine, où ta rue sort dehors en même temps — juste pour être ensemble. C’est pas mal ça, l’idée au complet.</p>
+  <p class="lede en">A standing time, once a week, when your street steps outside at the same time — just to be together. That’s pretty much the whole idea.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#start">
+      <span class="fr">Partir le tien</span><span class="en">Start one</span>
+    </a>
+    <a class="btn btn-ghost" href="#expect">
+      <span class="fr">T’es invité ? Par ici</span><span class="en">Invited? Read this</span>
+    </a>
+  </div>
+</div>
+
+<section id="idea">
+  <div class="wrap">
+    <p class="kicker"><span class="fr">L’idée</span><span class="en">The idea</span></p>
+    <h2>
+      <span class="fr">On réserve du temps pour tout — sauf pour le voisinage</span>
+      <span class="en">We set aside time for everything — except the neighbourhood</span>
+    </h2>
+    <p class="fr">Du temps pour soi, du temps en famille, des heures d’ouverture pour la job. Le voisinage, lui, ramasse ce qui reste — autrement dit, rien. Pas surprenant qu’on connaisse à peine le monde à trois portes de chez nous.</p>
+    <p class="en">Personal time, family time, business hours for work. The neighbourhood gets whatever’s left over — which is nothing. No wonder we barely know the people three doors down.</p>
+    <p class="fr">Hoodtemps, c’est le remède le plus simple possible : un rendez-vous hebdomadaire où tout le monde sur la rue sort dehors en même temps. Pas de plan, pas d’animateur, pas de programme. Des voisins, du temps — pis un voisinage qui finit par pousser tout seul.</p>
+    <p class="en">Hoodtemps is the simplest possible fix: a weekly standing date when everyone on the street comes outside at the same time. No plan, no host, no program. Neighbours plus time — and a neighbourhood grows on its own.</p>
+    <div class="grid">
+      <div class="card">
+        <h3><span class="fr">Auto-organisé</span><span class="en">Self-organized</span></h3>
+        <p class="fr">Personne est en charge — même pas la personne qui a lancé l’affaire.</p>
+        <p class="en">Nobody’s in charge — not even whoever got it going.</p>
+      </div>
+      <div class="card">
+        <h3><span class="fr">Pour la rue</span><span class="en">For the hood</span></h3>
+        <p class="fr">Comme le temps en famille, mais pour ta rue. Le reste peut attendre.</p>
+        <p class="en">Like family time, but for the street. Everything else can wait.</p>
+      </div>
+      <div class="card">
+        <h3><span class="fr">Le fun, sinon rien</span><span class="en">Fun, or it dies</span></h3>
+        <p class="fr">Le jour où ça devient une corvée, c’est fini. Ça doit rester léger.</p>
+        <p class="en">The day it feels like a chore, it’s over. Keep it light.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="expect">
+  <div class="wrap">
+    <p class="kicker"><span class="fr">T’es invité ?</span><span class="en">Invited to one?</span></p>
+    <h2>
+      <span class="fr">À quoi t’attendre</span>
+      <span class="en">What to expect</span>
+    </h2>
+    <p class="fr">Ça peut ressembler à du monde qui jase sur leurs balcons, ou à une fête de ruelle avec des jeux pis des stations improvisées. Chaque rue a sa version, comme chaque famille a la sienne.</p>
+    <p class="en">It might look like neighbours chatting on their front steps, or a full-on block party with games and pop-up stations. Every street does it its own way, like every family does family time its own way.</p>
+    <ul class="plain">
+      <li>
+        <span class="fr"><strong>Personne est en charge.</strong> Tu participes à ce que tu veux, tu passes ton tour quand tu veux.</span>
+        <span class="en"><strong>No one is in charge.</strong> Join what you like, skip what you don’t.</span>
+      </li>
+      <li>
+        <span class="fr"><strong>Aucun engagement.</strong> Viens comme t’es, reste le temps que tu veux.</span>
+        <span class="en"><strong>Zero commitment.</strong> Come as you are, stay as long as you like.</span>
+      </li>
+      <li>
+        <span class="fr"><strong>Apolitique et laïque.</strong> Tout le monde est bienvenu, dans l’ici et maintenant.</span>
+        <span class="en"><strong>Apolitical and secular.</strong> Everyone’s welcome, right here in the here and now.</span>
+      </li>
+      <li>
+        <span class="fr"><strong>Des grignotines, ça nuit jamais.</strong></span>
+        <span class="en"><strong>Snacks never hurt.</strong></span>
+      </li>
+    </ul>
+    <p class="fr" style="margin-top:20px"><em>C’est vraiment juste ça ?</em> Oui. Une idée simple, un gros effet : passe du temps avec ta rue, pis ta rue devient une vraie communauté.</p>
+    <p class="en" style="margin-top:20px"><em>Is that really all there is to it?</em> Yes. Simple idea, big effect: spend time with your street, and your street becomes a real community.</p>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <p class="kicker"><span class="fr">Envie d’essayer ?</span><span class="en">Want to try it?</span></p>
+    <h2>
+      <span class="fr">Partir un Hoodtemps</span>
+      <span class="en">Start a Hoodtemps</span>
+    </h2>
+    <ol class="steps">
+      <li>
+        <h3><span class="fr">Choisis un moment</span><span class="en">Pick a time</span></h3>
+        <p class="fr">Un moment où la plupart du monde est libre — le dimanche après-midi, mettons. Le même à chaque semaine.</p>
+        <p class="en">A time when most people are free — say, Sunday afternoon. Same time every week.</p>
+      </li>
+      <li>
+        <h3><span class="fr">Passe le mot</span><span class="en">Spread the word</span></h3>
+        <p class="fr">Parles-en à tes voisins, pose une affiche. Passe le mot — pis le vibe avec.</p>
+        <p class="en">Tell your neighbours, put up a sign. Spread the word — and the vibe along with it.</p>
+      </li>
+      <li>
+        <h3><span class="fr">Sors dehors</span><span class="en">Walk out your front door</span></h3>
+        <p class="fr">Apporte des grignotines pis sois-là, c’est tout. Jaser, jouer, conter des histoires — le reste vient tout seul.</p>
+        <p class="en">Bring some snacks and just be there. Chat, play, tell stories — the rest takes care of itself.</p>
+      </li>
+    </ol>
+    <p class="fr">Un dernier rappel : c’est pas parce que t’as parti le premier Hoodtemps que c’est le tien. <strong>Hoodtemps, c’est à la rue.</strong></p>
+    <p class="en">One last reminder: picking the first Hoodtemps doesn’t make it yours. <strong>Hoodtemps belongs to the hood.</strong></p>
+  </div>
+</section>
+
+<section id="ideas">
+  <div class="wrap">
+    <p class="kicker"><span class="fr">Des idées</span><span class="en">Ideas</span></p>
+    <h2>
+      <span class="fr">Si jamais tu veux brasser des affaires</span>
+      <span class="en">If you feel like stirring things up</span>
+    </h2>
+    <p class="fr">Rien d’obligatoire — mais n’importe qui peut monter sa petite « station ». Un carton, un crayon-feutre, pis c’est parti :</p>
+    <p class="en">None of this is required — but anyone can set up their own little “station.” A piece of poster board, a marker, and you’re off:</p>
+    <div class="chips">
+      <span class="chip fr">Concours de craie sur le trottoir, avec des rubans</span>
+      <span class="chip en">Sidewalk chalk contest, ribbons for the winners</span>
+      <span class="chip fr">Jam acoustique</span>
+      <span class="chip en">Acoustic jam session</span>
+      <span class="chip fr">Une pancarte « Veux-tu jaser ? »</span>
+      <span class="chip en">A “Veux-tu jaser?” conversation corner</span>
+      <span class="chip fr">Tournoi de poches (cornhole)</span>
+      <span class="chip en">Cornhole tournament</span>
+      <span class="chip fr">Montrer aux jeunes comment changer un pneu</span>
+      <span class="chip en">Show the kids how to change a tire</span>
+      <span class="chip fr">Hockey de rue</span>
+      <span class="chip en">Street hockey</span>
+      <span class="chip fr">Inscriptions au baseball du quartier</span>
+      <span class="chip en">Neighbourhood baseball signups</span>
+    </div>
+    <p class="avoid">
+      <span class="fr"><strong>Deux affaires à éviter :</strong> la vente (personne veut se faire pitcher un MLM dans un souper de famille) pis le militantisme qui dépasse la rue. Si ça touche pas directement ta rue, garde ça pour un autre moment.</span>
+      <span class="en"><strong>Two things to avoid:</strong> selling stuff (nobody wants an MLM pitch at a family dinner) and activism beyond the street. If it doesn’t directly concern your hood, save it for another time.</span>
+    </p>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <p class="kicker"><span class="fr">L’histoire</span><span class="en">The story</span></p>
+    <h2>
+      <span class="fr">Comment c’est parti</span>
+      <span class="en">How it started</span>
+    </h2>
+    <div class="story">
+      <p class="fr">En 2021, j’ai déménagé des États-Unis à Montréal avec ma famille. On est tombés sur une rue où, pendant la Covid, des voisins qui s’étaient croisés pendant dix ans sans se connaître se sont mis à se retrouver sur leurs balcons en même temps. Les saluts de la main sont devenus des jasettes, les jasettes sont devenues des vendredis soirs où l’heure du dodo existait plus.</p>
+      <p class="en">In 2021 I moved from the States to Montreal with my family. We landed on a street where, during Covid, neighbours who had crossed paths for a decade without really knowing each other started ending up on their porches at the same time. Waves turned into chats, chats turned into Friday nights where bedtimes stopped existing.</p>
+      <p class="fr">Là où il y avait des étrangers, il y a maintenant des contacts d’urgence, des voyages de camping, des brunchs, des fêtes d’enfants. Le monde avait pas changé — tous les ingrédients d’une belle communauté étaient déjà là. Il manquait juste un ingrédient : du temps. Hoodtemps, c’est cet ingrédient-là, fait exprès.</p>
+      <p class="en">Where there used to be strangers, there are now emergency contacts, camping trips, brunches, kids’ birthday parties. The people hadn’t changed — every ingredient of a great community was already there. Only one was missing: time. Hoodtemps is that ingredient, on purpose.</p>
+      <p class="sig">— Ryan Hamel, <span class="fr">fondateur</span><span class="en">founder</span></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="motto">
+      <span class="fr">Sois-là, pour que la rue puisse être.</span>
+      <span class="en">Be there, so the Hood can be.</span>
+    </p>
+    <p>
+      <a href="mailto:hoodtemps@proton.me">hoodtemps@proton.me</a>
+      &nbsp;·&nbsp; hoodtemps.ca
+    </p>
+  </div>
+</footer>
+
+<script>
+function setLang(l){
+  document.documentElement.lang = l;
+  try{localStorage.setItem('hoodtemps-lang', l);}catch(e){}
+  document.getElementById('btn-fr').setAttribute('aria-pressed', l==='fr');
+  document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
+  document.title = l==='fr' ? 'Hoodtemps — Quand on est nous autres' : 'Hoodtemps — When we are us';
+}
+(function(){
+  var saved = null;
+  try{saved = localStorage.getItem('hoodtemps-lang');}catch(e){}
+  var lang = saved || (((navigator.language||'fr').toLowerCase().indexOf('en')===0) ? 'en' : 'fr');
+  setLang(lang==='en' ? 'en' : 'fr');
+})();
+</script>
+
+</body>
+</html>
